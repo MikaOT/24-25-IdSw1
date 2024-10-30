@@ -1,0 +1,36 @@
+@startuml
+
+title Casos de Uso y Actores en Visual Studio Code
+
+actor "Desarrollador" as Developer
+actor "Administrador de Proyectos" as ProjectManager
+actor "Sistema de Control de Versiones (Git)" as VersionControl
+actor "Extensiones y Plugins" as Plugins
+actor "Sistema Operativo" as OS
+
+usecase "Abrir un Proyecto o Carpeta de Código" as OpenProject
+usecase "Escribir y Editar Código" as EditCode
+usecase "Depuración de Código" as DebugCode
+usecase "Control de Versiones" as VersionControlUse
+usecase "Administración de Extensiones" as ManageExtensions
+usecase "Configuración de Preferencias y Atajos de Teclado" as ConfigureSettings
+
+Developer --> OpenProject
+Developer --> EditCode
+Developer --> DebugCode
+Developer --> VersionControlUse
+Developer --> ManageExtensions
+Developer --> ConfigureSettings
+
+ProjectManager --> OpenProject
+
+VersionControl --> VersionControlUse
+
+Plugins --> ManageExtensions
+
+OS --> OpenProject
+OS --> EditCode
+OS --> DebugCode
+OS --> ConfigureSettings
+
+@enduml
